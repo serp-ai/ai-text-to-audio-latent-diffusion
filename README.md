@@ -2,7 +2,7 @@
 
 # About
 
-This repo is for text-to-audio diffusion utilizing a denoising unet and Meta's Encodec. The unet is trained to denoise Encodec's encoded codebooks from Gaussian noise while taking in t5 text embeddings as conditioning. Encodec's decoder can then take the denoised codebooks, and decode it to the uncompressed .wav file.
+This repo is for text-to-audio diffusion utilizing a denoising unet and Meta's Encodec. The unet is trained to denoise Encodec's encoded codebooks while taking in t5 text embeddings as conditioning. Encodec's decoder can then take the denoised codebooks, and decode it to the uncompressed .wav file.
 
 The architecture is by no means perfect as it is being actively tested/worked on. If you have any suggestions for improvements to try please don't hesistate to let us know!
 
