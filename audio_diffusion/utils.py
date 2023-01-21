@@ -42,6 +42,8 @@ def ema_update(model, averaged_model, decay):
     """Incorporates updated model parameters into an exponential moving averaged
     version of a model. It should be called after each optimizer step."""
     model_params = dict(model.named_parameters())
+    # move parameters to CPU to save memory
+    model_params = {name: param.cpu() for name, param in model_params.items()}
     averaged_params = dict(averaged_model.named_parameters())
     assert model_params.keys() == averaged_params.keys()
 
@@ -49,6 +51,8 @@ def ema_update(model, averaged_model, decay):
         averaged_params[name].mul_(decay).add_(param, alpha=1 - decay)
 
     model_buffers = dict(model.named_buffers())
+    # move buffers to CPU to save memory
+    model_buffers = {name: buf.cpu() for name, buf in model_buffers.items()}
     averaged_buffers = dict(averaged_model.named_buffers())
     assert model_buffers.keys() == averaged_buffers.keys()
 
