@@ -3,7 +3,7 @@ call "venv\Scripts\activate.bat"
 echo should be in venv here
 cd .
 python -m pip install --upgrade pip
-pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio --extra-index-url "https://download.pytorch.org/whl/cu116"
+pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.13.1+cu116 --extra-index-url "https://download.pytorch.org/whl/cu116"
 pip install transformers==4.25.1
 pip install diffusers[torch]==0.10.2
 pip install pynvml==11.4.1
@@ -20,7 +20,7 @@ pip install -U -I --no-deps https://github.com/C43H66N12O12S2/stable-diffusion-w
 pip install pytorch-lightning==1.6.5
 pip install OmegaConf==2.2.3
 pip install numpy==1.23.5
-pip install einops pandas prefigure scipy tqdm pydub
+pip install einops pandas prefigure scipy tqdm pydub encodec
 python utils/patch_bnb.py
 GOTO :eof
 
