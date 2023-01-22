@@ -150,9 +150,9 @@ class DiffusionUncond(nn.Module):
             out_channels=global_args.channels,   # depends on target bandwidth
             sample_size=4096,                    # size of latent codes (change depending on length of audio)
             model_channels=320,                  # hyperparameter to tune
-            attention_resolutions=[2, 2, 1, 1],  # hyperparameter to tune
+            attention_resolutions=[4, 2, 1],     # hyperparameter to tune
             num_res_blocks=6,                    # hyperparameter to tune
-            channel_mult=[1, 1, 2, 2] + [4] * 2, # hyperparameter to tune
+            channel_mult=[ 1, 2, 4, 4 ],         # hyperparameter to tune
             use_audio_transformer=True,          # hyperparameter to tune
             use_linear_in_transformer=True,      # hyperparameter to tune
             transformer_depth=1,                 # hyperparameter to tune
