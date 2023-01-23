@@ -132,7 +132,7 @@ class UNetModel(nn.Module):
 
         self.time_embed = nn.Sequential(
                 nn.Linear(timestep_input_dim, time_embed_dim),
-                nn.GELU(), # nn.SiLU(),
+                nn.SiLU(),
                 nn.Linear(time_embed_dim, time_embed_dim),
             )
 
@@ -331,7 +331,7 @@ class UNetModel(nn.Module):
 
         self.out = nn.Sequential(
             normalization(ch),
-            nn.GELU(), # nn.SiLU(),
+            nn.SiLU(),
             zero_module(conv_nd(dims, model_channels, out_channels, 5, padding=2)),
         )
         if self.predict_codebook_ids:
