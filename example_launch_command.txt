@@ -9,7 +9,7 @@ train_latent_cond.py ^
 --name=latent_dance_diffusion ^
 --precision=bf16 ^
 --training-dir=audio_chunks ^
---sample-size=1310500 ^
+--sample-size=1310720 ^
 --accum-batches=12 ^
 --batch-size=4 ^
 --demo-every=500 ^
