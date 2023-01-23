@@ -197,7 +197,7 @@ def main():
             "beta_start": 0.00085,
             "clip_sample": False,
             "num_train_timesteps": 1000,
-            "prediction_type": "v_prediction",
+            "prediction_type": "epsilon", # "v_prediction",
             "trained_betas": None
         }
 
